@@ -122,16 +122,17 @@ for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto er
 
 echo Bower tasy frontend finalizado com sucesso.
 echo ===============================================
+echo Processo finalizado sem erros.
 goto final
 
 :errorlabel
 echo ===============================================
 echo ===============================================
-echo FOI ENCONTRADO ERRO(s) NA(s) LINHA(s) ABAIXO:
+echo Foi encontrado erro(s) na(s) linha(s) abaixo (a execucao do script foi interrompida):
 findstr /I "error failure fatal" %LOG%
 
 :final
 echo ===============================================
 echo ===============================================
 echo ===============================================
-set /p DUMMY=Processo finalizado. Pressione ENTER para finalizar...
+set /p DUMMY=Pressione ENTER para finalizar...
