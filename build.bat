@@ -24,7 +24,6 @@ rem set setor_branch=assistencial
 rem ===========================================================
 rem ===========================================================
 rem ===========================================================
-rem findstr /I "error"  %LOG%
 
 echo ===============================================
 echo Iniciando atualizacao tasy-framework-backend (pull)...
