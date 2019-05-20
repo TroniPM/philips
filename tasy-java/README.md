@@ -1,4 +1,4 @@
-# Scripts para atualizar workspaces apenas
+# Scripts para atualizar workspaces
 
 Executar comando ```update.bat``` para atualizar os 4 workspaces e remover qualquer alteração no Repositório Local (equivalente a ```git reset --hard```):
   - Componentes
