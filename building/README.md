@@ -1,4 +1,4 @@
-# Buildando o tasy
+# Buildando o tasy em outra versão
 
 
 **(Obrigatório)** git clone dos projetos abaixo com SSH [MUITO importante: apenas com SSH]:
@@ -45,6 +45,7 @@ set LOG=log.log
 
 Execute o arquivo ```build.bat```. 
 
+# Output
 Caso ocorra algum erro em um dos comandos executados, o processo não irá continuar. Será necessário você ver onde parou e executar manualmente os demais comandos (ou reexecutar o script inteiro). A mensagem de saída será:
 ```
 ===============================================
@@ -69,4 +70,5 @@ Processo finalizado sem erros.
 ===============================================
 ```
 
-**(TO-DO)** Se nome de arquivo atualizado pelo git contenha palavras 'error', 'failure', ou 'fatal' (ou qualquer aparição dessas palavras), vai parar a build, mesmo que isso não seja de fato um erro. Ver melhor forma de detectar erros.
+# TO-DO
+Se nome de arquivo atualizado pelo git contenha palavras 'error', 'failure', ou 'fatal' (ou qualquer aparição dessas palavras), vai parar a build, mesmo que isso não seja de fato um erro. Ver melhor forma de detectar erros.
