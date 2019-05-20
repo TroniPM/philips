@@ -11,7 +11,7 @@ REM --> tasy/
 REM --> tasy-backend/
 REM --> tasy-framework-backend/
 REM --> tasy-framework/
-REM --> build.bat
+REM --> build-tasy.bat
 REM AUTOMATIZAÇÃO PARA ATUALIZAR, BUILDAR E PUBLICAR PROJETOS LOCALMENTE, DE ACORDO COM UMA VERSÃO.
 REM REQUER QUE REPOSITORIOS TENHAM SIDO CLONADOS COM SSH.
 
