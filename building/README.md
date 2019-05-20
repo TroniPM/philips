@@ -1,5 +1,6 @@
 # Buildando o tasy
 
+
 **(Obrigatório)** git clone dos projetos abaixo com SSH [MUITO importante: apenas com SSH]:
   - tasy
   - tasy-backend
@@ -67,3 +68,5 @@ Processo finalizado sem erros.
 ===============================================
 ===============================================
 ```
+
+**(TO-DO)** Se nome de arquivo atualizado pelo git contenha palavras 'error', 'failure', ou 'fatal' (ou qualquer aparição dessas palavras), vai parar a build, mesmo que isso não seja de fato um erro. Ver melhor forma de detectar erros.
