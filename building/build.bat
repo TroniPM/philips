@@ -15,11 +15,10 @@ REM --> build.bat
 REM AUTOMATIZAÇÃO PARA ATUALIZAR, BUILDAR E PUBLICAR PROJETOS LOCALMENTE, DE ACORDO COM UMA VERSÃO.
 REM REQUER QUE REPOSITORIOS TENHAM SIDO CLONADOS COM SSH.
 
-set frameworks_branch=3.02.1742
-set setor_branch=3.02.1742
-rem set frameworks_branch=dev
-rem set setor_branch=assistencial
-
+rem set frameworks_branch=3.02.1747
+rem set setor_branch=3.02.1747
+set frameworks_branch=dev
+set setor_branch=assistencial
 
 rem ===========================================================
 rem ===========================================================
@@ -29,7 +28,7 @@ echo ===============================================
 echo Iniciando atualizacao tasy-framework-backend (pull)...
 echo ===============================================
 
-start /b /wait cmd.exe /c "cd tasy-framework-backend/ && git reset --hard && git checkout %frameworks_branch% && git pull" >> %LOG% 2>&1
+start /b /wait cmd.exe /c "cd tasy-framework-backend/ && git reset --hard && git checkout %frameworks_branch% && git pull origin %frameworks_branch%" >> %LOG% 2>&1
 for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
 
 echo tasy-framework-backend atualizado com sucesso.
@@ -58,7 +57,7 @@ rem ===========================================================
 echo Iniciando atualizacao tasy-backend (pull)...
 echo ===============================================
 
-start /b /wait cmd.exe /c "cd tasy-backend/ && git reset --hard && git checkout %setor_branch% && git pull" >> %LOG% 2>&1
+start /b /wait cmd.exe /c "cd tasy-backend/ && git reset --hard && git checkout %setor_branch% && git pull origin %setor_branch%" >> %LOG% 2>&1
 for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
 
 echo tasy-backend atualizado com sucesso.
@@ -79,7 +78,7 @@ rem ===========================================================
 echo Iniciando atualizacao tasy-framework (pull)...
 echo ===============================================
 
-start /b /wait cmd.exe /c "cd tasy-framework/ && git reset --hard && git checkout %frameworks_branch% && git pull" >> %LOG% 2>&1
+start /b /wait cmd.exe /c "cd tasy-framework/ && git reset --hard && git checkout %frameworks_branch% && git pull origin %frameworks_branch%" >> %LOG% 2>&1
 for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
 
 echo tasy-framework atualizado com sucesso.
@@ -100,7 +99,7 @@ rem ===========================================================
 echo Iniciando atualizacao tasy frontend (pull)...
 echo ===============================================
 
-start /b /wait cmd.exe /c "cd tasy/ && git reset --hard && git checkout %setor_branch% && git pull" >> %LOG% 2>&1
+start /b /wait cmd.exe /c "cd tasy/ && git reset --hard && git checkout %setor_branch% && git pull origin %setor_branch%" >> %LOG% 2>&1
 for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
 
 echo tasy frontend atualizado com sucesso.
@@ -127,7 +126,7 @@ goto final
 :errorlabel
 echo ===============================================
 echo ===============================================
-echo Foi encontrado erro(s) na(s) linha(s) abaixo (a execucao do script foi interrompida):
+echo Execucao do script foi interrompida. Erro(s) encontrado(s):
 findstr /I "error failure fatal" %LOG%
 
 :final
