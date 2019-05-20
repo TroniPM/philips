@@ -1,10 +1,14 @@
 # Scripts para atualizar workspaces
 
-Executar comando ```update.bat``` para atualizar os 4 workspaces e remover qualquer alteração no Repositório Local (equivalente a ```git reset --hard```):
-  - Componentes
-  - Projetos Comuns
-  - Projetos Swing
-  - Projetos Web
+Executar comando ```update.bat``` para atualizar os 4 workspaces e remover qualquer alteração no Repositório Local (equivalente a ```git reset --hard```). A Estrutura de pastas deve ser a seguinte:
+
+    .
+    ├── Componentes/
+    ├── Projetos Comuns/
+    ├── Projetos Swing/
+    ├── Projetos Web/
+    ├── limpar.bat
+    └── update.bat
 
 
 Edite o arquivo ```limpar.bat``` para remover a pasta ```nbprojects``` dos projetos desejados, exemplo:
