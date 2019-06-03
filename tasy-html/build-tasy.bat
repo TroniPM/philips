@@ -29,7 +29,7 @@ echo Iniciando atualizacao tasy-framework-backend (pull)...
 echo ===============================================
 
 start /b /wait cmd.exe /c "cd tasy-framework-backend/ && git reset --hard && git checkout %frameworks_branch% && git pull origin %frameworks_branch%" >> %LOG% 2>&1
-for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
+for /f "tokens=*" %%a in ('findstr /i "failure fatal" %LOG%') do ( goto errorlabel )
 
 echo tasy-framework-backend atualizado com sucesso.
 echo ===============================================
@@ -37,7 +37,7 @@ echo Iniciando build tasy-framework-backend...
 echo ===============================================
 
 start /b /wait cmd.exe /c "cd tasy-framework-backend/ && gradle clean build" >> %LOG% 2>&1
-for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
+for /f "tokens=*" %%a in ('findstr /i "failure fatal" %LOG%') do ( goto errorlabel )
 
 echo Build tasy-framework-backend finalizada com sucesso.
 echo ===============================================
@@ -45,7 +45,7 @@ echo Publish do tasy-framework-backend vai iniciar.
 echo ===============================================
 
 start /b /wait cmd.exe /c "cd tasy-framework-backend/ && gradle publish publishToMavenLocal" >> %LOG% 2>&1
-for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
+for /f "tokens=*" %%a in ('findstr /i "failure fatal" %LOG%') do ( goto errorlabel )
 
 echo Publish do tasy-framework-backend finalizado com sucesso.
 echo ===============================================
@@ -58,7 +58,7 @@ echo Iniciando atualizacao tasy-backend (pull)...
 echo ===============================================
 
 start /b /wait cmd.exe /c "cd tasy-backend/ && git reset --hard && git checkout %setor_branch% && git pull origin %setor_branch%" >> %LOG% 2>&1
-for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
+for /f "tokens=*" %%a in ('findstr /i "failure fatal" %LOG%') do ( goto errorlabel )
 
 echo tasy-backend atualizado com sucesso.
 echo ===============================================
@@ -66,7 +66,7 @@ echo Iniciando build tasy-backend...
 echo ===============================================
 
 start /b /wait cmd.exe /c "cd tasy-backend/ && gradle clean build" >> %LOG% 2>&1
-for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
+for /f "tokens=*" %%a in ('findstr /i "failure fatal" %LOG%') do ( goto errorlabel )
 
 echo Build tasy-backend finalizada com sucesso.
 echo ===============================================
@@ -79,7 +79,7 @@ echo Iniciando atualizacao tasy-framework (pull)...
 echo ===============================================
 
 start /b /wait cmd.exe /c "cd tasy-framework/ && git reset --hard && git checkout %frameworks_branch% && git pull origin %frameworks_branch%" >> %LOG% 2>&1
-for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
+for /f "tokens=*" %%a in ('findstr /i "failure fatal" %LOG%') do ( goto errorlabel )
 
 echo tasy-framework atualizado com sucesso.
 echo ===============================================
@@ -87,7 +87,7 @@ echo Iniciando install tasy-framework...
 echo ===============================================
 
 start /b /wait cmd.exe /c "cd tasy-framework/ && npm install" >> %LOG% 2>&1
-for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
+for /f "tokens=*" %%a in ('findstr /i "failure fatal" %LOG%') do ( goto errorlabel )
 
 echo Install tasy-framework finalizado com sucesso.
 echo ===============================================
@@ -100,7 +100,7 @@ echo Iniciando atualizacao tasy frontend (pull)...
 echo ===============================================
 
 start /b /wait cmd.exe /c "cd tasy/ && git reset --hard && git checkout %setor_branch% && git pull origin %setor_branch%" >> %LOG% 2>&1
-for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
+for /f "tokens=*" %%a in ('findstr /i "failure fatal" %LOG%') do ( goto errorlabel )
 
 echo tasy frontend atualizado com sucesso.
 echo ===============================================
@@ -108,7 +108,7 @@ echo Iniciando install tasy frontend...
 echo ===============================================
 
 start /b /wait cmd.exe /c "cd tasy/ && npm install" >> %LOG% 2>&1
-for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
+for /f "tokens=*" %%a in ('findstr /i "failure fatal" %LOG%') do ( goto errorlabel )
 
 echo Install tasy frontend finalizado com sucesso.
 echo ===============================================
@@ -116,7 +116,7 @@ echo Bower tasy frontend vai iniciar.
 echo ===============================================
 
 start /b /wait cmd.exe /c "cd tasy/ && bower update" >> %LOG% 2>&1
-for /f "tokens=*" %%a in ('findstr /i "error failure fatal" %LOG%') do ( goto errorlabel )
+for /f "tokens=*" %%a in ('findstr /i "failure fatal" %LOG%') do ( goto errorlabel )
 
 echo Bower tasy frontend finalizado com sucesso.
 echo ===============================================
